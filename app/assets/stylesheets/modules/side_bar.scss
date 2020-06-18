@@ -13,10 +13,10 @@
         font-weight: bold;
       }
       &__lists {
-        display: inline-block;
+        display: block;
         float: right;
         .list {
-          display: inline-block;
+        display: inline-block;
         }
         .icon {
           color: $white;
