@@ -527,3 +527,431 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 119ms (Views: 112.0ms | ActiveRecord: 1.9ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (41.3ms)[0m  [1m[34mSELECT GET_LOCK('8445024276154775190', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (44.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateGroups (20200618131057)
+  [1m[35m (168.2ms)[0m  [1m[35mCREATE TABLE `groups` (`id` int AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_groups_on_name`  (`name`)) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200618131057')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGroupUsers (20200618131123)
+  [1m[35m (87.9ms)[0m  [1m[35mCREATE TABLE `group_users` (`id` int AUTO_INCREMENT PRIMARY KEY, `group_id` int, `user_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_group_users_on_group_id`  (`group_id`),  INDEX `index_group_users_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_a9d5f48449`
+FOREIGN KEY (`group_id`)
+  REFERENCES `groups` (`id`)
+, CONSTRAINT `fk_rails_1486913327`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200618131123')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8445024276154775190')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (2.0ms)[0m  [1m[35mSHOW CREATE TABLE `group_users`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `groups`[0m
+  [1m[35m (2.9ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'groups'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (26.9ms)[0m  [1m[34mSELECT GET_LOCK('8445024276154775190', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (51.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8445024276154775190')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (2.6ms)[0m  [1m[35mSHOW CREATE TABLE `group_users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `groups`[0m
+  [1m[35m (1.6ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'groups'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('8445024276154775190', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (50.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('8445024276154775190')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSHOW CREATE TABLE `group_users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `groups`[0m
+  [1m[35m (2.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'groups'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[36mUser Load (50.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (1, 2)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGroup Exists (8.7ms)[0m  [1m[34mSELECT  1 AS one FROM `groups` WHERE `groups`.`name` = BINARY 'グループ1' LIMIT 1[0m
+  [1m[35mSQL (21.2ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('グループ1', '2020-06-19 05:12:03', '2020-06-19 05:12:03')[0m
+  [1m[35mSQL (7.0ms)[0m  [1m[32mINSERT INTO `group_users` (`group_id`, `user_id`, `created_at`, `updated_at`) VALUES (1, 1, '2020-06-19 05:12:03', '2020-06-19 05:12:03')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-06-19 14:18:27 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (24.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (23.1ms)
+  Rendered messages/_main_chat.html.haml (80.6ms)
+  Rendered messages/index.html.haml within layouts/application (348.9ms)
+  Rendered layouts/_notifications.html.haml (7.3ms)
+Completed 200 OK in 12783ms (Views: 11769.1ms | ActiveRecord: 21.8ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2020-06-19 14:18:59 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/edit.html.haml within layouts/application
+  Rendered users/edit.html.haml within layouts/application (183.7ms)
+  Rendered layouts/_notifications.html.haml (2.5ms)
+Completed 200 OK in 559ms (Views: 326.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 14:19:08 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (8.1ms)
+  Rendered messages/_main_chat.html.haml (17.3ms)
+  Rendered messages/index.html.haml within layouts/application (38.9ms)
+  Rendered layouts/_notifications.html.haml (2.2ms)
+Completed 200 OK in 212ms (Views: 202.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 14:19:12 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (7.6ms)
+  Rendered messages/_main_chat.html.haml (24.6ms)
+  Rendered messages/index.html.haml within layouts/application (45.5ms)
+  Rendered layouts/_notifications.html.haml (10.4ms)
+Completed 200 OK in 228ms (Views: 213.9ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 14:20:55 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (20.8ms)
+  Rendered messages/_main_chat.html.haml (27.8ms)
+  Rendered messages/index.html.haml within layouts/application (72.9ms)
+  Rendered layouts/_notifications.html.haml (3.1ms)
+Completed 200 OK in 209ms (Views: 177.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 14:41:53 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (96.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (660.3ms)
+  Rendered messages/index.html.haml within layouts/application (707.2ms)
+Completed 500 Internal Server Error in 870ms (ActiveRecord: 96.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `group_user' for #<#<Class:0x00007fa8d8e19c58>:0x00007fa8df1fa420>
+Did you mean?  group_url):
+     5:       = current_user.name
+     6:     %ul.header__lists
+     7:       %li.list
+     8:         = link_to edit_new_path(group_user) do
+     9:           = icon('fas', 'pen-square', class: 'icon')
+    10:       %li.list
+    11:         = link_to edit_user_path(current_user) do
+  
+app/views/messages/_side_bar.html.haml:8:in `_app_views_messages__side_bar_html_haml__4588375240996975937_70181637276900'
+app/views/messages/index.html.haml:2:in `_app_views_messages_index_html_haml__4025107863228138826_70181637314180'
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (164.3ms)
+Started GET "/" for ::1 at 2020-06-19 14:42:11 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (13.0ms)
+  Rendered messages/_main_chat.html.haml (40.5ms)
+  Rendered messages/index.html.haml within layouts/application (63.6ms)
+  Rendered layouts/_notifications.html.haml (4.7ms)
+Completed 200 OK in 155ms (Views: 149.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 14:45:04 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (20.9ms)
+  Rendered messages/_main_chat.html.haml (32.7ms)
+  Rendered messages/index.html.haml within layouts/application (68.7ms)
+  Rendered layouts/_notifications.html.haml (3.2ms)
+Completed 200 OK in 280ms (Views: 230.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 14:45:11 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (7.3ms)
+  Rendered messages/_main_chat.html.haml (12.0ms)
+  Rendered messages/index.html.haml within layouts/application (28.6ms)
+  Rendered layouts/_notifications.html.haml (2.3ms)
+Completed 200 OK in 85ms (Views: 77.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2020-06-19 14:45:13 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/edit.html.haml within layouts/application
+  Rendered users/edit.html.haml within layouts/application (12.1ms)
+  Rendered layouts/_notifications.html.haml (2.4ms)
+Completed 200 OK in 68ms (Views: 59.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2020-06-19 14:45:18 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/edit.html.haml within layouts/application
+  Rendered users/edit.html.haml within layouts/application (13.5ms)
+  Rendered layouts/_notifications.html.haml (4.2ms)
+Completed 200 OK in 111ms (Views: 93.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 14:54:25 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (106.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (26.6ms)
+  Rendered messages/_main_chat.html.haml (32.0ms)
+  Rendered messages/index.html.haml within layouts/application (109.3ms)
+  Rendered layouts/_notifications.html.haml (3.1ms)
+Completed 200 OK in 397ms (Views: 230.9ms | ActiveRecord: 106.7ms)
+
+
+Started GET "/groups/new" for ::1 at 2020-06-19 14:54:28 +0900
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/new.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered groups/new.html.haml within layouts/application (202.9ms)
+  Rendered layouts/_notifications.html.haml (3.1ms)
+Completed 200 OK in 563ms (Views: 296.7ms | ActiveRecord: 152.4ms)
+
+
+Started GET "/groups/new" for ::1 at 2020-06-19 14:55:40 +0900
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/new.html.haml within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered groups/new.html.haml within layouts/application (4.7ms)
+  Rendered layouts/_notifications.html.haml (2.4ms)
+Completed 200 OK in 62ms (Views: 54.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/groups/new" for ::1 at 2020-06-19 14:59:13 +0900
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (44.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/new.html.haml within layouts/application
+  [1m[36mUser Load (215.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered groups/new.html.haml within layouts/application (309.2ms)
+  Rendered layouts/_notifications.html.haml (10.2ms)
+Completed 200 OK in 986ms (Views: 610.8ms | ActiveRecord: 260.3ms)
+
+
+Started GET "/groups/new" for ::1 at 2020-06-19 14:59:48 +0900
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/new.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered groups/new.html.haml within layouts/application (7.0ms)
+  Rendered layouts/_notifications.html.haml (8.8ms)
+Completed 200 OK in 96ms (Views: 84.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/groups/new" for ::1 at 2020-06-19 15:05:21 +0900
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/new.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered groups/new.html.haml within layouts/application (33.7ms)
+  Rendered layouts/_notifications.html.haml (14.3ms)
+Completed 200 OK in 267ms (Views: 201.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/groups" for ::1 at 2020-06-19 15:05:36 +0900
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZBAiNXerByQnB6ypGWm8ejDWincx/3r5xS0Wg45Ehchio7SBbIOupSjDHrwEFiOqfM0noGoo7VSjwMtkKM6u/Q==", "group"=>{"name"=>"testtest11", "user_ids"=>["", "1"]}, "commit"=>"Save"}
+  [1m[36mUser Load (42.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Started GET "/" for ::1 at 2020-06-19 15:14:05 +0900
+No template found for GroupsController#create, rendering head :no_content
+Completed 204 No Content in 2885589ms (ActiveRecord: 42.1ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 15:53:42 +0900
+Started GET "/" for ::1 at 2020-06-19 15:53:42 +0900
+Started GET "/" for ::1 at 2020-06-19 15:53:42 +0900
+  
+SyntaxError (/Users/narusekumi/projects/chat-space/app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (40.8ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.9ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.6ms)
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (797.6ms)
+  
+Started GET "/" for ::1 at 2020-06-19 15:53:46 +0900
+  
+  
+SyntaxError (/Users/narusekumi/projects/chat-space/app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+SyntaxError (/Users/narusekumi/projects/chat-space/app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+SyntaxError (/Users/narusekumi/projects/chat-space/app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+  
+  
+app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.5ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.3ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1463.8ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (169.2ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1603.8ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1503.7ms)
+  
+SyntaxError (/Users/narusekumi/projects/chat-space/app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (36.1ms)
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (543.4ms)
+Started GET "/" for ::1 at 2020-06-19 15:54:00 +0900
+  
+SyntaxError (/Users/narusekumi/projects/chat-space/app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/groups_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.8ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendering /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/narusekumi/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (625.1ms)
+Started GET "/" for ::1 at 2020-06-19 15:55:03 +0900
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (48.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (16.0ms)
+  Rendered groups/index.html.haml within layouts/application (35.0ms)
+  Rendered layouts/_notifications.html.haml (4.3ms)
+Completed 200 OK in 604ms (Views: 211.9ms | ActiveRecord: 244.9ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 15:58:53 +0900
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (15.1ms)
+  Rendered groups/index.html.haml within layouts/application (27.2ms)
+  Rendered layouts/_notifications.html.haml (5.2ms)
+Completed 200 OK in 161ms (Views: 127.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/groups/new" for ::1 at 2020-06-19 15:58:59 +0900
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (42.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/new.html.haml within layouts/application
+  [1m[36mUser Load (42.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered groups/new.html.haml within layouts/application (88.2ms)
+  Rendered layouts/_notifications.html.haml (4.0ms)
+Completed 200 OK in 394ms (Views: 113.9ms | ActiveRecord: 192.5ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 16:07:37 +0900
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (16.3ms)
+  Rendered groups/index.html.haml within layouts/application (28.3ms)
+  Rendered layouts/_notifications.html.haml (5.5ms)
+Completed 200 OK in 2516ms (Views: 2481.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 16:08:08 +0900
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (44.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (8.2ms)
+  Rendered groups/index.html.haml within layouts/application (14.3ms)
+  Rendered layouts/_notifications.html.haml (2.2ms)
+Completed 200 OK in 123ms (Views: 72.9ms | ActiveRecord: 44.4ms)
+
+
+Started GET "/groups/new" for ::1 at 2020-06-19 16:08:11 +0900
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/new.html.haml within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered groups/_form.html.haml (16.3ms)
+  Rendered groups/new.html.haml within layouts/application (25.5ms)
+  Rendered layouts/_notifications.html.haml (2.2ms)
+Completed 200 OK in 255ms (Views: 90.2ms | ActiveRecord: 125.8ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2020-06-19 16:08:15 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/edit.html.haml within layouts/application
+  Rendered users/edit.html.haml within layouts/application (7.6ms)
+  Rendered layouts/_notifications.html.haml (2.3ms)
+Completed 200 OK in 60ms (Views: 53.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-06-19 16:19:50 +0900
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/index.html.haml within layouts/application
+  Rendered messages/_side_bar.html.haml (16.5ms)
+  Rendered groups/index.html.haml within layouts/application (40.4ms)
+  Rendered layouts/_notifications.html.haml (6.0ms)
+Completed 200 OK in 217ms (Views: 184.3ms | ActiveRecord: 1.5ms)
+
+
