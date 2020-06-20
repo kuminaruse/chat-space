@@ -56,7 +56,6 @@ $('#new_message').on('submit', function(e){
         var html = buildHTML(data);
         $('.messages').append(html);
         $('form')[0].reset();
-        $('.text-message').val('');
         $('.chat-content__form-submit').attr('disabled', false);
     })
     .fail(function() {
