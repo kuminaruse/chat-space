@@ -2,18 +2,17 @@
   .header
     .left-header
       .left-header__title
-        グループ名
+        = @group.name
       %ul.left-header__members
-        Member：
-        %li.member
-          メンバー名
-        %li.member
-          メンバー名
-        %li.member
-          メンバー名
-    .right-header
-      .right-header__button
-        Edit
+        Members：
+        - @group.users.each do |user|
+          = user.name
+    %a{:href => "/groups/#{@group.id}/edit"}
+      .right-header Edit
+      -# .right-header__button
+        -# .right-header__button Edit
+        -# = link_to edit_group_path(@group), class: 'editor' do 
+        -#   Edit
   .messages
     = render @messages
     
@@ -25,4 +24,3 @@
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
-
