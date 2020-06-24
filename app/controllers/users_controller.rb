@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
-
+  def index
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+  
   def edit
   end
   
@@ -16,5 +22,13 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email)
     end
+
+    def index
+      respond_to do |format|
+        format.html
+        format.json
+      end
+    end
+
 
 end
