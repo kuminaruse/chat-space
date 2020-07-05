@@ -51,13 +51,13 @@ $(function(){
       return html;
     };
 
-    $(".new_message").on("submit", function(e){
+    $('.new_message').on('submit', function(e){
       e.preventDefault()
-      var url = $("#new_message").attr("action");
       formData = new FormData(this);
+      var url = $(this).attr('action')
       $.ajax({
-        url:  url,  
-        type: 'POST',  
+        url:  url,
+        type: "POST",
         data: formData,
         dataType: 'json',
         processData: false,
@@ -65,10 +65,11 @@ $(function(){
         })
   
       .done(function(data){
+        console.log(data);
         var html = buildHTML(data);
-        $('.main_chat__group').append(html);
-        $('.main_chat__group').animate({ scrollTop: $('.main_chat__group')[0].scrollHeight});
+        $('.messages').append(html);
         $('form')[0].reset();
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
         })
   
       .fail(function() {
@@ -78,11 +79,10 @@ $(function(){
       .always(function(){
         $('.form__submit').removeAttr('disabled')
       });
-    })
+    });
   
 
     var reloadMessages = function() {
-      if (window.location.href.match(/\/groups\/\d+\/messages/)){
       last_message_id = $('.message:last').data("message-id");
       $.ajax({
         url: "api/messages",
@@ -95,13 +95,12 @@ $(function(){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.main_chat__group').append(insertHTML);
-        $('.main_chat__group').animate({ scrollTop: $('.main_chat__group')[0].scrollHeight});
+        $('.messages').append(insertHTML);
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       })
       .fail(function() {
         alert("受信失敗しました");
       });
-      }
     };
     
     setInterval(reloadMessages, 7000);
