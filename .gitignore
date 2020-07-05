@@ -18,3 +18,4 @@
 public/uploads/*
 # ChatSpace/
 config/secrets.yml
+log/development.log
