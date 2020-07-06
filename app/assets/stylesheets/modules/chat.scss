@@ -84,9 +84,12 @@
       float: left;
       height: 50px;
       padding-right: 10px;
+      position: relative;
       &__image {
         font-size: 20px;
-        line-height: 50px;
+        top: 15px;
+        position: absolute;
+        right: 10px;
       }
       .hidden {
         display: none;
